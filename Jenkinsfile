@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'Node.js 18.16.0'
+    environment {
+        PATH = "$PATH:/usr/local/bin"
     }
 
     stages {
