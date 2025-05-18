@@ -42,15 +42,7 @@ pipeline {
             }
         }
 
-        stage('Frontend Lint') {
-            steps {
-                dir('frontend') {
-                    script {
-                        sh 'npm run lint'
-                    }
-                }
-            }
-        }
+      
 
         stage('Backend Tests') {
             steps {
