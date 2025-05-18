@@ -16,7 +16,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     script {
-                        bat 'npm install'
+                        sh 'npm install'
                     }
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 dir('server') {
                     script {
-                        bat 'npm install'
+                        sh 'npm install'
                     }
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     script {
-                        bat 'npm run build'
+                        sh 'npm run build'
                     }
                 }
             }
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     script {
-                        bat 'npm run lint'
+                        sh 'npm run lint'
                     }
                 }
             }
@@ -56,7 +56,7 @@ pipeline {
             steps {
                 dir('server') {
                     script {
-                        bat 'echo "No tests specified yet"'
+                        sh 'echo "No tests specified yet"'
                     }
                 }
             }
@@ -65,7 +65,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    bat 'echo "Deployment configuration required"'
+                    sh 'echo "Deployment configuration required"'
                 }
             }
         }
