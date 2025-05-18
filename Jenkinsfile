@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    environment {
-        NODE_VERSION = '18.16.0'
+    tools {
+        nodejs 'Node.js 18.16.0'
     }
 
     stages {
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     script {
-                        sh 'npm install'
+                        bat 'npm install'
                     }
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 dir('server') {
                     script {
-                        sh 'npm install'
+                        bat 'npm install'
                     }
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     script {
-                        sh 'npm run build'
+                        bat 'npm run build'
                     }
                 }
             }
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 dir('frontend') {
                     script {
-                        sh 'npm run lint'
+                        bat 'npm run lint'
                     }
                 }
             }
@@ -56,7 +56,7 @@ pipeline {
             steps {
                 dir('server') {
                     script {
-                        sh 'echo "No tests specified yet"'
+                        bat 'echo "No tests specified yet"'
                     }
                 }
             }
@@ -65,7 +65,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh 'echo "Deployment configuration required"'
+                    bat 'echo "Deployment configuration required"'
                 }
             }
         }
